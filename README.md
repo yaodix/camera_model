@@ -1,3 +1,7 @@
+# ref
+https://github.com/jj-tetraquark/ocamcalib_undistort  
+https://github.com/libing64/camera_model  
+
 # camera_model
 
 相机内参标定和双目标定
