@@ -485,6 +485,7 @@ int main(int argc, char** argv)
         // visualize observed and reprojected points
         calibration.drawResults(cbImages);
 
+        // calibration.init
         for (size_t i = 0; i < cbImages.size(); ++i)
         {
             cv::putText(cbImages.at(i), cbImageFilenames.at(i), cv::Point(10,20),

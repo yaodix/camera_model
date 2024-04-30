@@ -120,6 +120,7 @@ namespace camera_model
         template <typename T>
         static void SphereToPlane(const T *const params, const Eigen::Matrix<T, 3, 1> &P,
                                   Eigen::Matrix<T, 2, 1> &p);
+        cv::Mat undistortImg(const cv::Mat& img_in);
 
         void initUndistortMap(cv::Mat &map1, cv::Mat &map2, double fScale = 1.0) const;
         cv::Mat initUndistortRectifyMap(cv::Mat &map1, cv::Mat &map2,

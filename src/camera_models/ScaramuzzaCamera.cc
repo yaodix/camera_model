@@ -641,7 +641,8 @@ namespace camera_model
             phi_i *= phi;
         }
 
-        P << xc[0], xc[1], -z;
+        // P << xc[0], xc[1], -z;
+        P << xc_a[0], xc_a[1], -z;
     }
 
     /** 
@@ -684,6 +685,15 @@ namespace camera_model
     {
         Eigen::Vector3d P(p_u[0], p_u[1], 1.0);
         spaceToPlane(P, p);
+    }
+
+// 鱼眼图像去畸变
+    cv::Mat OCAMCamera::undistortImg(const cv::Mat& img_in) {
+        for(int i = 0; i < img_in.cols; i++) {
+            for (int j= 0; j < img_in.rows; j++) {
+                
+            }
+        }
     }
 
 #if 0

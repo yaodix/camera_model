@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.0)
 project(camera_model)
 
 set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS "-std=c++11 -march=native")
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "-march=native")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -fPIC")
 
 # find_package(catkin REQUIRED COMPONENTS
@@ -38,8 +39,8 @@ target_link_libraries(camera_model ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIB
 add_executable(intrinsic_calib src/intrinsic_calib.cc)    
 target_link_libraries(intrinsic_calib camera_model ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
 
-add_executable(stereo_calib src/stereo_calib.cc src/calib/StereoCameraCalibration.cc)
-target_link_libraries(stereo_calib camera_model)
+# add_executable(stereo_calib src/stereo_calib.cc src/calib/StereoCameraCalibration.cc)
+# target_link_libraries(stereo_calib camera_model)
 
 file(GLOB CALIB_HEADER_FILES include/camera_model/calib/*.h)
 file(GLOB CAMERA_MODELS_HEADER_FILES include/camera_model/camera_models/*.h)
